@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+        CSS'in 3 adet kullanım şekli vardır
+        1. Etiket içinde kullanılır.
+        2. Head etikeleri arasında kullanılır.
+        3. ekstra CSS sayfası açar referansını HTML sayfasına atarız.
+
+        CSS kullanırken iki etiketi aynı anda seçebiliriz
+        h1,p yazarak parantez içinde bu iki etikete özellik verebiliriz.
+        
+        id özelligini seçmek için # işareti kullanılır.
+        class özelligi için . işareti kullanırız.
+
+        #logo , .lead == id logo olan, classı lead olanları seç demek
+
+        #logo.lead == id logo ve classı lead olanı seç demek.
+
+        ul li a == ul içindeki li nin içindeki a etiketini kapsayan özellik.
+
+        tüm HTML sayfasındaki etiketleri seçmek için ise * işareti kullanırız.
+
+        CSS kodları yukarıdan başlayarak uygular bu yüzden genelden özele doğru yazmak en doğrusudur.
+        
+        CSS özelliginin yanına !important eklersek ayzdıgımız özellik başka bir noktada değişse bile 
+        bu etki kabul görmez.
+
+        Pozisyon Belirteçleri:
+        z-index==> Üç boyutlu alanda z eksenine hareket vermemizi saglar. 
+        position Fixed ==> Scroll ile kaysan bile aynı yerde kalmaya devam eder.
+        Position Relative ==> Bu possition defualt ayardır ekleme yaptıkgımızda 
+        bir önceki etiketin hemen yanına veya altına ekleme yapar
+
+    -->
+    
+    <!-- İd'si box-1 olan etiketi kapsar.-->
+    <style>
+        #fixBox{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 0 50%;
+            position: fixed;
+            
+        }
+        
+        #boxRed{
+            width: 100px;
+            height: 100px;
+            left: 50px;
+            background-color: red;
+            position: relative;
+            z-index: 1;
+            
+        }
+        #boxBlue{
+            width: 100px;
+            height: 100px;
+            top: 10px;
+            left: 10px;
+            background-color: blue;
+            position: relative;
+            
+        }
+        #innerBox{
+            width: 20px;
+            height: 20px;
+            top: 10px;
+            left: 10px;
+            background-color: blue;
+            position: absolute;
+            
+        }
+        #outBox{
+            width: 110px;
+            height: 110px;
+            background-color: red;
+            position: relative;
+            
+        }
+            
+        
+    </style>
+</head>
+<body>
+    <div id="fixBox"></div>
+    <div id="boxRed"></div>
+    <div id="boxBlue"></div>
+    <hr>
+
+    <div id="outBox">
+        <div id="innerBox"></div>
+    </div>
+    
+    
+</body>
+</html>
